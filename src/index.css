@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3D flip helpers */
+.perspective { perspective: 1000px; }
+.flip-container { transform-style: preserve-3d; transition: transform 0.6s; }
+.flip-180 { transform: rotateY(180deg); }
+.backface-hidden { backface-visibility: hidden; }
+
+/* Smooth card hover scale */
+.card-hover { transition: transform .3s; }
+.card-hover:hover { transform: translateY(-4px) scale(1.02); }
+
+/* Sticky blur header background */
+.header-blur {
+  backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(241, 245, 249, 0.6); /* background color with opacity */
+}
