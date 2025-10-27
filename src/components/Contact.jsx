@@ -6,10 +6,11 @@ export default function Contact() {
       <h2 className="text-3xl font-bold mb-6">Kontakt aufnehmen</h2>
 
       <form
-        action="https://formspree.io/f/mqagepdp"   // 👈 dein persönlicher Link
+        action="https://formspree.io/f/mqagepdp"   // dein echter Formspree-Link
         method="POST"
         className="max-w-xl mx-auto space-y-4 text-left"
       >
+        {/* Name */}
         <div>
           <label className="block text-sm font-semibold mb-1 text-slate-700">
             Name<span className="text-red-500">*</span>
@@ -23,6 +24,7 @@ export default function Contact() {
           />
         </div>
 
+        {/* Team */}
         <div>
           <label className="block text-sm font-semibold mb-1 text-slate-700">
             Team
@@ -35,6 +37,7 @@ export default function Contact() {
           />
         </div>
 
+        {/* E-Mail */}
         <div>
           <label className="block text-sm font-semibold mb-1 text-slate-700">
             E-Mail<span className="text-red-500">*</span>
@@ -48,6 +51,27 @@ export default function Contact() {
           />
         </div>
 
+        {/* Produktkategorie */}
+        <div>
+          <label className="block text-sm font-semibold mb-1 text-slate-700">
+            Produktkategorie<span className="text-red-500">*</span>
+          </label>
+          <select
+            name="category"
+            required
+            className="w-full p-3 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-primary focus:outline-none"
+          >
+            <option value="">Bitte auswählen...</option>
+            <option value="Jerseys">Jerseys</option>
+            <option value="Hosen">Hosen</option>
+            <option value="Teamwear">Teamwear</option>
+            <option value="Trainingsequipment">Trainingsequipment</option>
+            <option value="Zubehör">Zubehör</option>
+            <option value="Sonstiges">Sonstiges</option>
+          </select>
+        </div>
+
+        {/* Nachricht */}
         <div>
           <label className="block text-sm font-semibold mb-1 text-slate-700">
             Nachricht<span className="text-red-500">*</span>
@@ -61,6 +85,7 @@ export default function Contact() {
           />
         </div>
 
+        {/* Submit Button */}
         <button
           type="submit"
           className="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-secondary transition-colors"
