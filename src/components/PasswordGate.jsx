@@ -1,12 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function PasswordGate({ children }) {
   const [authorized, setAuthorized] = useState(false);
   const [input, setInput] = useState("");
 
   const checkPassword = () => {
-    if (input === "zayan") setAuthorized(true);
-    else alert("Falsches Passwort");
+    if (input === "zayan") {
+      setAuthorized(true);
+    } else {
+      alert("Falsches Passwort");
+    }
   };
 
   if (authorized) return children;
