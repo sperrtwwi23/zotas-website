@@ -33,19 +33,22 @@ export default function About() {
 
         {/* Bild mit Hover-Effekt */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative rounded-3xl overflow-hidden shadow-soft group"
-        >
-          <img
-            src={portrait}
-            alt="Thomas Sperr – Running Back bei den Hellenstein Rascals"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-        </motion.div>
+  initial={{ opacity: 0, scale: 0.98 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: 0.1 }}
+  className="relative rounded-3xl shadow-soft group overflow-hidden"
+>
+  <div className="absolute inset-0 rounded-3xl overflow-hidden">
+    <img
+      src={portrait}
+      alt="Thomas Sperr – Running Back bei den Hellenstein Rascals"
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 will-change-transform"
+    />
+  </div>
+  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
+</motion.div>
+
       </div>
     </Section>
   )
