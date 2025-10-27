@@ -8,9 +8,11 @@ import Benefits from './components/Benefits'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import PasswordGate from "./components/PasswordGate"
 
 export default function App() {
   return (
+    <PasswordGate>
     <div className="bg-background text-text font-sans">
       <Navbar />
       <main>
@@ -40,5 +42,6 @@ export default function App() {
       </main>
       <Footer />
     </div>
+    </PasswordGate>
   )
 }
