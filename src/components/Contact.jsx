@@ -1,34 +1,77 @@
-import React from 'react'
-import Section from './Section'
-import { useForm } from 'react-hook-form'
+import React from "react";
 
 export default function Contact() {
-  const { register, handleSubmit, reset } = useForm()
-  const onSubmit = data => {
-    alert('Danke für deine Anfrage!\nWir melden uns zeitnah.')
-    reset()
-    console.log('Anfrage:', data)
-  }
-
   return (
-      <div className="max-w-3xl mx-auto py-24">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center">Unverbindlich anfragen</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="grid sm:grid-cols-2 gap-4 bg-white rounded-3xl p-6 shadow-soft">
-          <input {...register('name', { required: true })} placeholder="Name" className="p-3 border rounded-xl" />
-          <input {...register('team', { required: true })} placeholder="Team" className="p-3 border rounded-xl" />
-          <input {...register('email', { required: true })} placeholder="E-Mail" type="email" className="p-3 border rounded-xl sm:col-span-2" />
-          <select {...register('interest')} className="p-3 border rounded-xl sm:col-span-2">
-            <option>Jerseys</option>
-            <option>Hosen</option>
-            <option>Teamwear</option>
-            <option>Trainings-Equipment</option>
-          </select>
-          <textarea {...register('message')} placeholder="Nachricht" className="p-3 border rounded-xl sm:col-span-2 h-32" />
-          <button type="submit" className="sm:col-span-2 rounded-2xl bg-primary text-white px-6 py-3 font-semibold shadow-soft hover:bg-secondary transition-colors">
-            Absenden
-          </button>
-        </form>
-        <p className="text-center text-sm text-slate-600 mt-3">Wir kommen innerhalb von 24–48h auf dich zu.</p>
-      </div>
-  )
+    <section id="contact" className="py-20 px-6 bg-white text-center">
+      <h2 className="text-3xl font-bold mb-6">Kontakt aufnehmen</h2>
+
+      <form
+        action="https://formspree.io/f/mqagepdp"   // 👈 dein persönlicher Link
+        method="POST"
+        className="max-w-xl mx-auto space-y-4 text-left"
+      >
+        <div>
+          <label className="block text-sm font-semibold mb-1 text-slate-700">
+            Name<span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Dein Name"
+            className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold mb-1 text-slate-700">
+            Team
+          </label>
+          <input
+            type="text"
+            name="team"
+            placeholder="Teamname (optional)"
+            className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold mb-1 text-slate-700">
+            E-Mail<span className="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="deine@email.de"
+            className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold mb-1 text-slate-700">
+            Nachricht<span className="text-red-500">*</span>
+          </label>
+          <textarea
+            name="message"
+            required
+            placeholder="Worum geht’s?"
+            rows="5"
+            className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-secondary transition-colors"
+        >
+          Absenden
+        </button>
+      </form>
+
+      <p className="mt-6 text-sm text-slate-500">
+        Wir melden uns schnellstmöglich bei dir!
+      </p>
+    </section>
+  );
 }
