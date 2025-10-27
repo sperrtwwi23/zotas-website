@@ -12,11 +12,16 @@ import jerseyBack from '../assets/images/jersey-back.png'
 import jerseyFront from '../assets/images/jersey-front.png'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import ProductCard from './ProductCard'
 
 function FlipCard({ front, back, name }) {
   const [flip, setFlip] = useState(false)
   return (
-    <div className="w-64 h-80 perspective cursor-pointer" onMouseEnter={() => setFlip(true)} onMouseLeave={() => setFlip(false)}>
+    <div
+      className="w-64 h-80 perspective cursor-pointer"
+      onMouseEnter={() => setFlip(true)}
+      onMouseLeave={() => setFlip(false)}
+    >
       <div className={`relative w-full h-full flip-container ${flip ? 'flip-180' : ''}`}>
         <img src={front} alt={name + ' Vorderseite'} className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-soft backface-hidden" />
         <img src={back} alt={name + ' Rückseite'} className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-soft backface-hidden" style={{ transform: 'rotateY(180deg)' }} />
@@ -26,19 +31,10 @@ function FlipCard({ front, back, name }) {
   )
 }
 
-function ProductCard({ img, title, desc }) {
-  return (
-    <div className="bg-white rounded-3xl p-6 shadow-soft card-hover max-w-sm">
-      <img src={img} alt={title} className="w-full h-44 object-cover rounded-2xl mb-4" />
-      <h4 className="text-lg font-bold mb-2">{title}</h4>
-      <p className="text-sm text-slate-600">{desc}</p>
-    </div>
-  )
-}
-
 export default function Products() {
   return (
-      <div className="max-w-6xl mx-auto py-24">
+    <Section id="products" bg="bg-background" className="py-24 md:py-28 px-6">
+      <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,12 +45,14 @@ export default function Products() {
           Unsere Produkte
         </motion.h2>
 
+        {/* Flip-Karten */}
         <div className="grid md:grid-cols-3 gap-8 place-items-center mb-14">
           <FlipCard front={jerseyFront} back={jerseyBack} name="Jersey" />
           <FlipCard front={pantsFront} back={pantsBack} name="Hose" />
           <FlipCard front={hoodieFront} back={hoodieBack} name="Teamwear" />
         </div>
 
+        {/* Produktkarten */}
         <div className="grid md:grid-cols-4 gap-6">
           <ProductCard img={dummyImg} title="Tackling Dummies" desc="Harte Hülle, stabile Nähte, lange Haltbarkeit." />
           <ProductCard img={sledImg} title="Blocking Sled" desc="Robust und modular für verschiedene Trainingsziele." />
@@ -62,5 +60,6 @@ export default function Products() {
           <ProductCard img={bagImg} title="Team Bags" desc="Viel Platz, verstärkte Böden, Teambranding möglich." />
         </div>
       </div>
+    </Section>
   )
 }

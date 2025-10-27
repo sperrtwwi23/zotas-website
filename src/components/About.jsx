@@ -37,17 +37,16 @@ export default function About() {
   whileInView={{ opacity: 1, scale: 1 }}
   viewport={{ once: true }}
   transition={{ duration: 0.5, delay: 0.1 }}
-  className="relative rounded-3xl shadow-soft group overflow-hidden"
+  className="relative overflow-hidden rounded-3xl shadow-soft group"
 >
-  <div className="absolute inset-0 rounded-3xl overflow-hidden">
-    <img
-      src={portrait}
-      alt="Thomas Sperr – Running Back bei den Hellenstein Rascals"
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 will-change-transform"
-    />
-  </div>
-  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
+  <img
+    src={portrait}
+    alt="Thomas Sperr – Running Back bei den Hellenstein Rascals"
+    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 will-change-transform"
+  />
+  <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 </motion.div>
+
 
       </div>
     </Section>
