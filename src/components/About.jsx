@@ -27,7 +27,7 @@ export default function About() {
 </blockquote>
 
 <p className="leading-relaxed text-white">
-  Unser Ziel ist es, <strong>Football-Teams jeder Größe zuverlässig mit Ausrüstung zu versorgen, auf die man sich verlassen kann.</strong>
+  Unser Ziel ist es, <strong>Football-Teams jeder Größe zuverlässig mit Ausrüstung zu versorgen, auf die man sich verlassen kann</strong>. 
   Alles, was wir entwickeln, basiert auf echter Spielerfahrung und den Herausforderungen, die wir selbst Woche für Woche
   auf dem Feld erleben.
 </p>
@@ -40,7 +40,7 @@ export default function About() {
 
 <p className="leading-relaxed text-white mt-4">
   Unsere Vision ist eine Marke, die aus der Football-Community heraus entsteht – von Spielern, für Spieler. <strong>Eine Marke,
-  die wir selbst gerne früher gehabt hätten.</strong>
+  die wir selbst gerne früher gehabt hätten</strong>.
 </p>
 
         </motion.div>
