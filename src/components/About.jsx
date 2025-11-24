@@ -26,19 +26,19 @@ export default function About() {
   </footer>
 </blockquote>
 
-<p className="leading-relaxed text-white/90">
+<p className="leading-relaxed text-white">
   Unser Ziel ist es, Football-Teams jeder Größe zuverlässig mit Ausrüstung zu versorgen, auf die man sich verlassen kann.
   Alles, was wir entwickeln, basiert auf echter Spielerfahrung und den Herausforderungen, die wir selbst Woche für Woche
   auf dem Feld erleben.
 </p>
 
-<p className="leading-relaxed text-white/90 mt-4">
+<p className="leading-relaxed text-white mt-4">
   Wir legen Wert auf perfekte Passform, robuste Materialien, ehrliche Beratung und klare Kommunikation, damit Vereine
   jederzeit wissen, wo ihre Bestellung steht. Maßgeschneiderte Jerseys, Hosen, Teamwear und Trainings-Equipment stehen
   bei uns für Qualität, Funktionalität und Teamidentität – nicht für leere Versprechen.
 </p>
 
-<p className="leading-relaxed text-white/90 mt-4">
+<p className="leading-relaxed text-white mt-4">
   Unsere Vision ist eine Marke, die aus der Football-Community heraus entsteht – von Spielern, für Spieler. Eine Marke,
   die wir selbst gerne früher gehabt hätten.
 </p>
